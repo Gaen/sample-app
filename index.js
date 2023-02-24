@@ -8,6 +8,7 @@ const port = 3000;
 app.use(pino(pretty()));
 
 app.get('/', (req, res) => {
+    console.log('Got request!');
     res.send('Hello World!');
 });
 
