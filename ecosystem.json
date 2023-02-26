@@ -13,7 +13,8 @@
       "host" : "vds",
       "ref"  : "origin/master",
       "repo" : "git@github.com:Gaen/sample-app.git",
-      "path" : "/home/myapp/sample-app/"
+      "path" : "/home/myapp/sample-app/",
+      "post-deploy" : ". ~/.nvm/nvm.sh && npm ci --production && pm2 startOrRestart ecosystem.json --env prod"
     }
   }
 }
