@@ -9,7 +9,7 @@ app.use(pino(pretty()));
 
 app.get('/', (req, res) => {
     console.log('Got request!');
-    res.send('Hello World!');
+    res.send('Hello World! This is new version!');
 });
 
 app.listen(port, () => {
