@@ -2,8 +2,9 @@ const express = require('express');
 const pino = require('pino-http');
 const pretty = require('pino-pretty');
 
+const port = process.env.PORT || 3000;
+
 const app = express();
-const port = 3000;
 
 app.use(pino(pretty({destination: process.stdout})));
 
