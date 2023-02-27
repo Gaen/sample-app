@@ -5,7 +5,7 @@ const pretty = require('pino-pretty');
 const app = express();
 const port = 3000;
 
-app.use(pino(pretty()));
+app.use(pino(pretty({destination: process.stdout})));
 
 app.get('/', (req, res) => {
     console.log('Got request!');
