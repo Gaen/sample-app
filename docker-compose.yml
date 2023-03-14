@@ -2,6 +2,8 @@ services:
 
   myapp:
     image: sample-app:dev
+    environment:
+      - PG_URL=postgres://dev:hello@db:5432/sample
     volumes:
       # монтируем исходники чтобы изменения отражались в контейнере
       - ./src:/app/src

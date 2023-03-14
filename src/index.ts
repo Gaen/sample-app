@@ -5,14 +5,12 @@ const pino = require('pino-http');
 const pretty = require('pino-pretty');
 const { Client } = require('pg')
 
+const pgUrl = process.env['PG_URL'];
+
 const main = async () => {
 
     const client = new Client({
-        host: 'db',
-        port: 5432,
-        database: 'sample',
-        user: 'dev',
-        password: 'hello',
+        connectionString: pgUrl,
     });
     await client.connect();
 
