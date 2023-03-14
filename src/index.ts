@@ -3,8 +3,21 @@ import {Request, Response} from 'express';
 const express = require('express');
 const pino = require('pino-http');
 const pretty = require('pino-pretty');
+const { Client } = require('pg')
 
 const main = async () => {
+
+    const client = new Client({
+        host: 'db',
+        port: 5432,
+        database: 'sample',
+        user: 'dev',
+        password: 'hello',
+    });
+    await client.connect();
+
+    const res = await client.query('SELECT $1::text as message', ['Hello world from pg!']);
+    console.log(res.rows[0].message) // Hello world!
 
     const port = process.env.PORT || 3000;
 

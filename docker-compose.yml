@@ -7,3 +7,17 @@ services:
       - ./src:/app/src
       # монтируем package.json чтобы не нужно было пересобирать образ если мы потрогали скрипты
       - ./package.json:/app/src/package.json
+
+  db:
+    image: postgres:15-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: sample
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: hello
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
