@@ -19,5 +19,10 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+
 volumes:
   pgdata:
