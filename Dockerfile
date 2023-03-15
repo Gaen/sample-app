@@ -1,4 +1,4 @@
-FROM node:18 AS dev
+FROM --platform=linux/amd64 node:18 AS dev
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ COPY ./src ./src
 
 CMD [ "npm", "run", "dev" ]
 
-FROM node:18-alpine as release
+FROM --platform=linux/amd64 node:18-alpine as release
 
 WORKDIR /app
 
