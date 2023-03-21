@@ -12,7 +12,7 @@ app.use(pino(pretty({destination: process.stdout})));
 
 app.get('/', (req: Request, res: Response) => {
     console.log('Got request!');
-    res.send('Hello World! This is new version!');
+    res.send('Hello World! This is v2!');
 });
 
 app.listen(port, () => {

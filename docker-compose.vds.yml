@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+
+  myapp:
+    image: ghcr.io/gaen/sample-app:${TAG}
+    ports:
+      - 3000:3000
+    deploy:
+      replicas: 1
